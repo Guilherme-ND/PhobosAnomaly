@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FilmeDTO.cs" />
+    <Compile Include="FilmeListDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioAutenticaDTO.cs" />
     <Compile Include="UsuarioDTO.cs" />
