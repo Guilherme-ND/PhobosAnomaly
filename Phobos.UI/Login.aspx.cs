@@ -46,7 +46,8 @@ namespace Phobos.UI
                             Limpar();
                             break;
                             case 2:
-                            lblMessage.Text = "User";
+                            Response.Redirect("/Pages/ConsultaUser.aspx");
+                            //lblMessage.Text = "User";
                             Limpar();
                             break;
                     }

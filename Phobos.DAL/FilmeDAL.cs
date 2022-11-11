@@ -42,7 +42,7 @@ namespace Phobos.DAL
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT tituloFilme, generoFilme, descricaoClassificacao FROM filme INNER JOIN classificacao ON filme.idClassificacao = classificacao.idClassificacao;", conn);
+                cmd = new MySqlCommand("SELECT tituloFilme, generoFilme, produtoraFilme, urlImagemFilme, descricaoClassificacao FROM filme INNER JOIN classificacao ON filme.idClassificacao = classificacao.idClassificacao;", conn);
                 dr = cmd.ExecuteReader();
                 //ponteiro
                 List<FilmeListDTO> Lista = new List<FilmeListDTO>();
@@ -51,6 +51,8 @@ namespace Phobos.DAL
                     FilmeListDTO obj = new FilmeListDTO();
                     obj.tituloFilme = dr["tituloFilme"].ToString();
                     obj.generoFilme = dr["generoFilme"].ToString();
+                    obj.produtoraFilme = dr["produtoraFilme"].ToString();
+                    obj.urlImagemFilme = dr["urlImagemFilme"].ToString();
                     obj.descricaoClassificacao = dr["descricaoClassificacao"].ToString();
 
                     //add a lista
@@ -61,7 +63,7 @@ namespace Phobos.DAL
             catch (Exception ex)
             {
 
-                throw new Exception("Erro ao listar filmes"+ex.Message);
+                throw new Exception("Erro ao listar filmes" + ex.Message);
             }
             finally
             {
@@ -108,6 +110,42 @@ namespace Phobos.DAL
             {
 
                 throw new Exception("Erro ao excluir filme" + ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
+        //BuscarPorId
+        public FilmeDTO BuscaPorId(int idFilme)
+        {
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT * FROM filme WHERE idFilme = @idFilme", conn);
+                cmd.Parameters.AddWithValue("@idFilme", idFilme);
+                dr = cmd.ExecuteReader();
+
+                FilmeDTO obj = null;
+                if (dr.Read())
+                {
+                    obj = new FilmeDTO();
+                    obj.idFilme = Convert.ToInt32(dr["idFilme"]);
+                    obj.tituloFilme = dr["tituloFilme"].ToString();
+                    obj.generoFilme = dr["generoFilme"].ToString();
+                    obj.produtoraFilme = dr["produtoraFilme"].ToString();
+                    obj.urlImagemFilme = dr["urlImagemFilme"].ToString();
+                    obj.idClassificacao = Convert.ToInt32(dr["idClassificacao"]);
+
+                }
+                return obj;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao buscar registro !!" + ex.Message);
             }
             finally
             {
