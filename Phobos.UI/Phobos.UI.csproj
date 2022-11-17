@@ -116,7 +116,37 @@
     <Content Include="img\perfil9.png" />
     <Content Include="Index.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="Pages\ConsultaUser.aspx" />
+    <Content Include="Pages\css\media.css" />
+    <Content Include="Pages\css\reset.css" />
+    <Content Include="Pages\css\style.css" />
+    <Content Include="Pages\img\carrosel1.png" />
+    <Content Include="Pages\img\carrosel2.jpg" />
+    <Content Include="Pages\img\carrosel3.jpg" />
+    <Content Include="Pages\img\carrosel4.jpg" />
+    <Content Include="Pages\img\carrosel5.jpg" />
+    <Content Include="Pages\img\icon.png" />
+    <Content Include="Pages\img\img1.png" />
+    <Content Include="Pages\img\img10.png" />
+    <Content Include="Pages\img\img11.png" />
+    <Content Include="Pages\img\img12.png" />
+    <Content Include="Pages\img\img13.png" />
+    <Content Include="Pages\img\img14.png" />
+    <Content Include="Pages\img\img2.png" />
+    <Content Include="Pages\img\img3.png" />
+    <Content Include="Pages\img\img6.png" />
+    <Content Include="Pages\img\img7.png" />
+    <Content Include="Pages\img\img8.png" />
+    <Content Include="Pages\img\img9.png" />
+    <Content Include="Pages\img\perfil.PNG" />
+    <Content Include="Pages\img\perfil2.png" />
+    <Content Include="Pages\img\perfil3.png" />
+    <Content Include="Pages\img\perfil4.png" />
+    <Content Include="Pages\img\perfil5.png" />
+    <Content Include="Pages\img\perfil6.png" />
+    <Content Include="Pages\img\perfil7.png" />
+    <Content Include="Pages\img\perfil8.png" />
+    <Content Include="Pages\img\perfil9.png" />
+    <Content Include="Pages\IndexUser.aspx" />
     <Content Include="script\bootstrap.bundle.js" />
     <Content Include="script\bootstrap.bundle.min.js" />
     <Content Include="script\bootstrap.esm.js" />
@@ -135,6 +165,7 @@
     <Content Include="DefaultAdmin.Master" />
     <Content Include="DefaultUser.Master" />
     <Content Include="font\Poppins-Light.otf" />
+    <Content Include="Pages\font\Poppins-Light.otf" />
     <None Include="script\jquery-3.6.0.intellisense.js" />
     <Content Include="script\jquery-3.6.0.js" />
     <Content Include="script\jquery-3.6.0.min.js" />
@@ -254,12 +285,12 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ConsultaUser.aspx.cs">
-      <DependentUpon>ConsultaUser.aspx</DependentUpon>
+    <Compile Include="Pages\IndexUser.aspx.cs">
+      <DependentUpon>IndexUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\ConsultaUser.aspx.designer.cs">
-      <DependentUpon>ConsultaUser.aspx</DependentUpon>
+    <Compile Include="Pages\IndexUser.aspx.designer.cs">
+      <DependentUpon>IndexUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
