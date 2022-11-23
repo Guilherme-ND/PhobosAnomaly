@@ -11,7 +11,16 @@ namespace Phobos.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Usuario"] == null)
+            {
+                Response.Redirect("../login.aspx");
+            }
+            lblMessage.Text = "Bem Vindo " + Session["Usuario"] + " a Phobos";
+        }
 
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../login.aspx");
         }
     }
 }

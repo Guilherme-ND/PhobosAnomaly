@@ -87,11 +87,15 @@
     <Content Include="css\media.css" />
     <Content Include="css\reset.css" />
     <Content Include="css\style.css" />
+    <Content Include="img\add.png" />
+    <Content Include="img\addB.png" />
+    <Content Include="img\cancel.png" />
     <Content Include="img\carrosel1.png" />
     <Content Include="img\carrosel2.jpg" />
     <Content Include="img\carrosel3.jpg" />
     <Content Include="img\carrosel4.jpg" />
     <Content Include="img\carrosel5.jpg" />
+    <Content Include="img\delete.png" />
     <Content Include="img\icon.png" />
     <Content Include="img\img1.png" />
     <Content Include="img\img10.png" />
@@ -114,11 +118,13 @@
     <Content Include="img\perfil7.png" />
     <Content Include="img\perfil8.png" />
     <Content Include="img\perfil9.png" />
+    <Content Include="img\save.png" />
+    <Content Include="img\update.png" />
     <Content Include="Index.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Pages\css\media.css" />
     <Content Include="Pages\css\reset.css" />
-    <Content Include="Pages\css\style.css" />
+    <Content Include="Pages\css\styleP.css" />
     <Content Include="Pages\img\carrosel1.png" />
     <Content Include="Pages\img\carrosel2.jpg" />
     <Content Include="Pages\img\carrosel3.jpg" />
@@ -146,6 +152,8 @@
     <Content Include="Pages\img\perfil7.png" />
     <Content Include="Pages\img\perfil8.png" />
     <Content Include="Pages\img\perfil9.png" />
+    <Content Include="Pages\IndexAdmin.aspx" />
+    <Content Include="Pages\IndexAdminFilme.aspx" />
     <Content Include="Pages\IndexUser.aspx" />
     <Content Include="script\bootstrap.bundle.js" />
     <Content Include="script\bootstrap.bundle.min.js" />
@@ -284,6 +292,20 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\IndexAdmin.aspx.cs">
+      <DependentUpon>IndexAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\IndexAdmin.aspx.designer.cs">
+      <DependentUpon>IndexAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\IndexAdminFilme.aspx.cs">
+      <DependentUpon>IndexAdminFilme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\IndexAdminFilme.aspx.designer.cs">
+      <DependentUpon>IndexAdminFilme.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\IndexUser.aspx.cs">
       <DependentUpon>IndexUser.aspx</DependentUpon>

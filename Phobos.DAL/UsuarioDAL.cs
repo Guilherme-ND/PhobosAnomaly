@@ -166,8 +166,8 @@ namespace Phobos.DAL
                     obj.nomeUsuario = dr["nomeUsuario"].ToString();
                     obj.emailUsuario = dr["emailUsuario"].ToString();
                     obj.senhaUsuario = dr["senhaUsuario"].ToString();
-                    obj.dataNascUsuario = Convert.ToDateTime(dr["dataNascUsuario"]);
-                    obj.usuarioTp = Convert.ToInt32(dr["usuarioTp"]);
+                    obj.dataNascUsuario = dr["dataNascUsuario"].ToString();
+                    obj.usuarioTp = dr["usuarioTp"].ToString();
 
                 }
                 return obj;
@@ -183,5 +183,42 @@ namespace Phobos.DAL
                 Desconectar();
             }
         }
+
+        //Listar Admin
+        public List<UsuarioDTO> ListarAdmin()
+        {
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT usuario.id,nomeUsuario,senhaUsuario,emailUsuario,dataNascUsuario,descricaoTipoUsuario FROM usuario INNER JOIN tipousuario ON usuario.usuarioTp = tipousuario.idTipoUsuario", conn);
+                dr = cmd.ExecuteReader();
+                //ponteiro = Lista vazia
+                List<UsuarioDTO> Lista = new List<UsuarioDTO>();
+                while (dr.Read())
+                {
+                    UsuarioDTO obj = new UsuarioDTO();
+                    obj.idUsuario = Convert.ToInt32(dr["idUsuario"]);
+                    obj.nomeUsuario = dr["nomeUsuario"].ToString();
+                    obj.emailUsuario = dr["emailUsuario"].ToString();
+                    obj.senhaUsuario = dr["senhaUsuario"].ToString();
+                    obj.dataNascUsuario = Convert.ToDateTime(dr["dataNascUsuario"]).ToString("dd/mm/yyyy");
+                    obj.usuarioTp = dr["descricaoTipoUsuario"].ToString();
+
+                    //adicionar a lista
+                    Lista.Add(obj);
+                }
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao listar registros !!" + ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
     }
 }

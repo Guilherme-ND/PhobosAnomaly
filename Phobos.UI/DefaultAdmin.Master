@@ -5,16 +5,82 @@
 <html>
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/media.css"/>
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'/>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon"/>
+    <title>Enxame Hospital</title>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class="container">
+            <header>
+            <nav>
+                <div class="menu">
+                    <a href="#home" class="logo">
+                        <i class='bx bxs-ball'></i>
+                        <span>Enxame</span>
+                    </a>
+                    <ul class="navbar open">
+
+                        <li><asp:Label ID="lblMessage" runat="server" ForeColor="White" Text="Session"></asp:Label></li>
+
+                        <a class="btnMenu"><i class='bx bx-menu'></i></a>
+                        <li><a href="IndexAdmin.aspx">User</a></li>
+                        <li><a href="IndexAdminFilme.aspx">Movie</a></li>
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btnDefault" OnClick="btnLogin_Click"/>
+                    </ul>
+
+                </div>
+            </nav>
+        </header>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
+
+    <!-- Scripts -->
+    <script src="script/jquery-3.6.0.min.js"></script>
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Script Local -->
+    <script src="script/script.js"></script>
     </form>
+
+    <!-- footer -->
+        <footer>
+            <div class="footerC">
+                <ul>
+                    <li><a href="../index.aspx#home">home</a></li>
+                    <li><a href="../index.aspx#about">about</a></li>
+                    <li><a href="../index.aspx#emphasis">emphasis</a></li>
+                    <li><a href="../index.aspx#products">products</a></li>
+                    <li><a href="../index.aspx#services">services</a></li>
+                </ul>
+                <ul>
+                    <li><a href="../index.aspx#domain">domain</a></li>
+                    <li><a href="../index.aspx#localization">localization</a></li>
+                    <li><a href="../index.aspx#contact">contact</a></li>
+                </ul>
+                <a href="#home" class="logo">
+                    <i class='bx bxs-ball'></i>
+                    <span>Phobos</span>
+                </a>
+                <h5>&copy; Copyright all rights reserved 2012</h5>
+            </div>
+        </footer>
+
 </body>
 </html>
