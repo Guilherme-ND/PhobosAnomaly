@@ -13,6 +13,6 @@ namespace Phobos.DTO
         public string generoFilme { get; set; }
         public string produtoraFilme { get; set; }
         public string urlImagemFilme { get; set; }
-        public int idClassificacao { get; set; }
+        public string idClassificacao { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace Phobos.DAL
         {
             try
             {
-                conn = new MySqlConnection("Data Source=localhost; Initial Catalog=phobos; Uid=root; Pwd=");
+                conn = new MySqlConnection("Data Source=localhost; Initial Catalog=phobos; Uid=root; Pwd=;");
                 conn.Open();
             }
             catch (Exception ex)

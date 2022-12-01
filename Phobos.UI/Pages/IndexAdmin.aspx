@@ -1,12 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DefaultAdmin.Master" AutoEventWireup="true" CodeBehind="IndexAdmin.aspx.cs" Inherits="Phobos.UI.Pages.IndexAdmin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="css/styleP.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="base">
         <h1 id="user">Users</h1>
 
-        <asp:GridView runat="server" ID="dgv1" GridLines="None" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="id" OnRowCommand="dgv1_RowCommand" OnRowUpdating="dgv1_RowUpdating" OnRowDeleting="dgv1_RowDeleting"
+        <asp:GridView runat="server" ID="dgv1" GridLines="None" AutoGenerateColumns="false" ShowFooter="true" DataKeyNames="idUsuario" OnRowCommand="dgv1_RowCommand" OnRowUpdating="dgv1_RowUpdating" OnRowDeleting="dgv1_RowDeleting"
             OnRowEditing="dgv1_RowEditing" OnRowCancelingEdit="dgv1_RowCancelingEdit">
             <Columns>
                 <%--Template Nome--%>
@@ -93,21 +94,21 @@
                 <%--Buttons--%>
                 <asp:TemplateField HeaderText="Opções">
                     <ItemTemplate>
-                        <asp:ImageButton runat="server" ID="btnEditar" ImageUrl="~/img/update.png" ToolTip="Editar" Width="30" Height="30" CommandName="Edit"/>
+                        <asp:ImageButton runat="server" ID="btnEditar" ImageUrl="~/img/updateB.png" ToolTip="Editar" Width="30" Height="30" CommandName="Edit" />
 
-                        <asp:ImageButton runat="server" ID="btnExcluir" ImageUrl="~/img/delete.png" ToolTip="Excluir" Width="30" Height="30" CommandName="Delete" OnClientClick="if (!confirm('Deseja realmente eliminar este registro ?')) return false"/>
+                        <asp:ImageButton runat="server" ID="btnExcluir" ImageUrl="~/img/deleteB.png" ToolTip="Excluir" Width="30" Height="30" CommandName="Delete" OnClientClick="if (!confirm('Deseja realmente eliminar este registro ?')) return false" />
 
                     </ItemTemplate>
 
                     <EditItemTemplate>
-                        <asp:ImageButton runat="server" ID="btnSalvar" ImageUrl="~/img/save.png" ToolTip="Salvar" Width="30" Height="30" CommandName="Update"/>
+                        <asp:ImageButton runat="server" ID="btnSalvar" ImageUrl="~/img/saveB.png" ToolTip="Salvar" Width="30" Height="30" CommandName="Update" />
 
-                        <asp:ImageButton runat="server" ID="btnCancelar" ImageUrl="~/img/cancel.png" ToolTip="Cancelar" Width="30" Height="30" CommandName="Cancel"/>
+                        <asp:ImageButton runat="server" ID="btnCancelar" ImageUrl="~/img/cancel.png" ToolTip="Cancelar" Width="30" Height="30" CommandName="Cancel" />
 
                     </EditItemTemplate>
 
                     <FooterTemplate>
-                        <asp:ImageButton runat="server" ID="btnAdicionar" ImageUrl="~/img/addB.png" ToolTip="Adicionar" Width="30" Height="30" CommandName="Add"/>
+                        <asp:ImageButton runat="server" ID="btnAdicionar" ImageUrl="~/img/addB.png" ToolTip="Adicionar" Width="30" Height="30" CommandName="Add" />
 
                     </FooterTemplate>
                 </asp:TemplateField>
@@ -117,7 +118,7 @@
         </asp:GridView>
 
         <br />
-        <asp:Label runat="server" ID="lblMessage" Text="Label"/>
+        <asp:Label runat="server" ID="lblMessage" Text="Label" />
 
     </div>
 </asp:Content>

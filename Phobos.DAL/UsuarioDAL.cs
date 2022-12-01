@@ -190,7 +190,7 @@ namespace Phobos.DAL
             try
             {
                 Conectar();
-                cmd = new MySqlCommand("SELECT usuario.id,nomeUsuario,senhaUsuario,emailUsuario,dataNascUsuario,descricaoTipoUsuario FROM usuario INNER JOIN tipousuario ON usuario.usuarioTp = tipousuario.idTipoUsuario", conn);
+                cmd = new MySqlCommand("SELECT usuario.idUsuario,nomeUsuario,senhaUsuario,emailUsuario,dataNascUsuario,descricaoTipoUsuario FROM usuario INNER JOIN tipousuario ON usuario.usuarioTp = tipousuario.idTipoUsuario", conn);
                 dr = cmd.ExecuteReader();
                 //ponteiro = Lista vazia
                 List<UsuarioDTO> Lista = new List<UsuarioDTO>();
@@ -201,7 +201,7 @@ namespace Phobos.DAL
                     obj.nomeUsuario = dr["nomeUsuario"].ToString();
                     obj.emailUsuario = dr["emailUsuario"].ToString();
                     obj.senhaUsuario = dr["senhaUsuario"].ToString();
-                    obj.dataNascUsuario = Convert.ToDateTime(dr["dataNascUsuario"]).ToString("dd/mm/yyyy");
+                    obj.dataNascUsuario = Convert.ToDateTime(dr["dataNascUsuario"]).ToString("dd/MM/yyyy");
                     obj.usuarioTp = dr["descricaoTipoUsuario"].ToString();
 
                     //adicionar a lista

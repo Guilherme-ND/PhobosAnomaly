@@ -136,7 +136,7 @@ namespace Phobos.DAL
                     obj.generoFilme = dr["generoFilme"].ToString();
                     obj.produtoraFilme = dr["produtoraFilme"].ToString();
                     obj.urlImagemFilme = dr["urlImagemFilme"].ToString();
-                    obj.idClassificacao = Convert.ToInt32(dr["idClassificacao"]);
+                    obj.idClassificacao = dr["idClassificacao"].ToString();
 
                 }
                 return obj;
@@ -152,5 +152,48 @@ namespace Phobos.DAL
                 Desconectar();
             }
         }
+
+
+        //Listar Admin
+        public List<FilmeDTO> ListarAdmin()
+        {
+            try
+            {
+                Conectar();
+                cmd = new MySqlCommand("SELECT filme.idFilme,tituloFilme, generoFilme, produtoraFilme, urlImagemFilme, descricaoClassificacao FROM filme INNER JOIN classificacao ON filme.idClassificacao = classificacao.idClassificacao", conn);
+                dr = cmd.ExecuteReader();
+                //ponteiro - lista vazia
+                List<FilmeDTO> Lista = new List<FilmeDTO>();
+                while (dr.Read())
+                {
+                    FilmeDTO obj = new FilmeDTO();
+                    obj.idFilme = Convert.ToInt32(dr["idFilme"]);
+                    obj.tituloFilme = dr["tituloFilme"].ToString();
+                    obj.generoFilme = dr["generoFilme"].ToString();
+                    obj.produtoraFilme = dr["produtoraFilme"].ToString();
+                    obj.urlImagemFilme = dr["urlImagemFilme"].ToString();
+                    obj.idClassificacao = dr["descricaoClassificacao"].ToString();
+
+                    //adiciar a lista
+                    Lista.Add(obj);
+                }
+                return Lista;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao listar registros !!" + ex.Message);
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
     }
+
+
+
 }
+
+  

@@ -96,6 +96,7 @@
     <Content Include="img\carrosel4.jpg" />
     <Content Include="img\carrosel5.jpg" />
     <Content Include="img\delete.png" />
+    <Content Include="img\deleteB.png" />
     <Content Include="img\icon.png" />
     <Content Include="img\img1.png" />
     <Content Include="img\img10.png" />
@@ -119,7 +120,9 @@
     <Content Include="img\perfil8.png" />
     <Content Include="img\perfil9.png" />
     <Content Include="img\save.png" />
+    <Content Include="img\saveB.png" />
     <Content Include="img\update.png" />
+    <Content Include="img\updateB.png" />
     <Content Include="Index.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Pages\css\media.css" />
