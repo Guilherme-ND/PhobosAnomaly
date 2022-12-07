@@ -18,6 +18,14 @@
 
                     <EditItemTemplate>
                         <asp:TextBox runat="server" ID="txtnomeusuario" MaxLength="50" Text='<%#Eval("nomeUsuario") %>' />
+
+                        <asp:RequiredFieldValidator
+                            ID="nomeusuario"
+                            runat="server"
+                            ErrorMessage="Digite o nome !!"
+                            ForeColor="Red"
+                            ControlToValidate="txtnomeusuario" />
+
                     </EditItemTemplate>
 
                     <FooterTemplate>
@@ -33,6 +41,14 @@
 
                     <EditItemTemplate>
                         <asp:TextBox runat="server" ID="txtemailusuario" MaxLength="50" Text='<%#Eval("emailUsuario") %>' />
+
+                        <asp:RequiredFieldValidator
+                            ID="emailusuario"
+                            runat="server"
+                            ErrorMessage="Digite o e-mail !!"
+                            ForeColor="Red"
+                            ControlToValidate="txtemailusuario" />
+
                     </EditItemTemplate>
 
                     <FooterTemplate>
@@ -48,6 +64,14 @@
 
                     <EditItemTemplate>
                         <asp:TextBox runat="server" ID="txtsenhausuario" MaxLength="6" Text='<%#Eval("senhaUsuario") %>' />
+
+                        <asp:RequiredFieldValidator
+                            ID="senhausuario"
+                            runat="server"
+                            ErrorMessage="Digite a senha !!"
+                            ForeColor="Red"
+                            ControlToValidate="txtsenhausuario" />
+
                     </EditItemTemplate>
 
                     <FooterTemplate>
@@ -63,6 +87,14 @@
 
                     <EditItemTemplate>
                         <asp:TextBox runat="server" ID="txtdataNascusuario" MaxLength="50" Text='<%#Eval("dataNascUsuario") %>' />
+
+                        <asp:RequiredFieldValidator
+                            ID="dataNascusuario"
+                            runat="server"
+                            ErrorMessage="Digite a data!!"
+                            ForeColor="Red"
+                            ControlToValidate="txtdataNascUsuario" />
+
                     </EditItemTemplate>
 
                     <FooterTemplate>
@@ -81,6 +113,7 @@
                             <asp:ListItem Value="1" Text="Administrador" />
                             <asp:ListItem Value="2" Text="Outros" />
                         </asp:RadioButtonList>
+
                     </EditItemTemplate>
 
                     <FooterTemplate>
@@ -118,7 +151,7 @@
         </asp:GridView>
 
         <br />
-        <asp:Label runat="server" ID="lblMessage" Text="Label" />
+        <asp:Label runat="server" ID="lblMessage" Text="Label" ForeColor="White" />
 
     </div>
 </asp:Content>
